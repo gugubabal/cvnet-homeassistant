@@ -78,7 +78,7 @@ devices:
         temp_checksum: 140
       state_packet: F7 20 01 4A 81
       state_position: 7
-    - name: 지율이방 보일러
+    - name: 침실1 보일러
       commands:
         cmd_heat:
           - F7 20 43 01 11 92 00 00 00 00 00 00 00 07 AA
@@ -90,7 +90,7 @@ devices:
         temp_checksum: 139
       state_packet: F7 20 01 4A 81
       state_position: 9
-    - name: 서재 보일러
+    - name: 침실2 보일러
       commands:
         cmd_heat:
           - F7 20 44 01 11 8e 00 00 00 00 00 00 00 04 AA
@@ -102,18 +102,7 @@ devices:
         temp_checksum: 138
       state_packet: F7 20 01 4A 81
       state_position: 11
-    - name: 드레스룸 보일러
-      commands:
-        cmd_heat:
-          - F7 20 45 01 11 92 00 00 00 00 00 00 00 09 AA
-        cmd_off:
-          - F7 20 45 01 11 12 00 00 00 00 00 00 00 89 AA
-        cmd_heat_ack: F7 20 01 45 91 92 1C 00 00 00 00 00 00 A5 AA
-        cmd_off_ack: F7 20 01 45 91 12 1D 00 00 00 00 00 00 26 AA
-        cmd_temp_ack: F7 20 01 4A 81 12 1E 14 1C 13 1C 0F 18 A2 AA
-        temp_checksum: 137
-      state_packet: F7 20 01 4B 81
-      state_position: 5
+    
   fan:
     - name: 전열 교환기
       commands:
@@ -128,7 +117,7 @@ devices:
         cmd_high: F7 20 71 01 11 01 01 03 00 00 00 00 00 A8 AA
       state_packet: F7 20 01 71 81
       state_position: 7
-
+      
   switch:
     - name: 거실 메인 조명1
       commands:
@@ -140,7 +129,6 @@ devices:
         cmd_off_ack: F7 20 01 21 9F 00 00 00 00 00 00 00 00 E1 AA
       state_packet: F7 20 01 21 81
       state_position: 5
-
     - name: 거실 메인 조명2
       commands:
         cmd_on:
@@ -151,7 +139,7 @@ devices:
         cmd_off_ack: F7 20 01 21 9F 01 00 00 00 00 00 00 00 E2 AA
       state_packet: F7 20 01 21 81
       state_position: 6
-    - name: 거실 메인 복도 조명
+    - name: 거실 메인 조명3
       key: light3
       commands:
         cmd_on:
@@ -182,5 +170,35 @@ devices:
           - F7 20 01 E1 81 02 00 01 00 00 04 30 38 F2 AA
       state_packet: F7 20 01 22 81
       state_position: 5
+- name: 침실1 메인 조명
+      commands:
+        cmd_on:
+          - F7 20 23 01 11 01 00 00 00 00 00 00 00 56 AA
+        cmd_off:
+          - F7 20 23 01 11 00 00 00 00 00 00 00 00 55 AA
+        cmd_on_ack: 
+        cmd_off_ack: 
+      state_packet: F7 20 01 23 81
+      state_position: 5
+- name: 침실2 메인 조명1
+      commands:
+        cmd_on:
+          - F7 20 24 01 11 01 00 00 00 00 00 00 00 57 AA
+        cmd_off:
+          - F7 20 24 01 11 00 00 00 00 00 00 00 00 56 AA
+        cmd_on_ack: F7 20 01 24 9F 01 00 00 00 00 00 00 00 E5 AA
+        cmd_off_ack: F7 20 01 24 9F 00 00 00 00 00 00 00 00 E4 AA
+      state_packet: F7 20 01 24 81
+      state_position: 5
+- name: 침실2 메인 조명2
+      commands:
+        cmd_on:
+          - F7 20 24 01 12 01 00 00 00 00 00 00 00 58 AA
+        cmd_off:
+          - F7 20 24 01 12 00 00 00 00 00 00 00 00 57 AA
+        cmd_on_ack: F7 20 01 24 9F 01 01 00 00 00 00 00 00 E6 AA
+ 	cmd_off_ack: F7 20 01 24 9F 01 00 00 00 00 00 00 00 E5 AA
+      state_packet: F7 20 01 24 81
+      state_position: 6
 
 
